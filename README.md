@@ -48,9 +48,14 @@ For Software: ni
 
 # Screenshots (Add at least 3)
 <img width="1920" height="1080" alt="scrnshot 1" src="https://github.com/user-attachments/assets/4cbf6cf6-a513-458c-8b2c-2215733735b8" />
+After program is run, duck is spawned into the screen.
 <img width="1899" height="1080" alt="scrshnot 2" src="https://github.com/user-attachments/assets/69daf96e-7b21-4828-83ee-cb6489fb9466" />
+After the hunger bar is run out, a "FEED ME" button appears, as well as duck starts multiplying in size and layingg golden eggs across the screen.
 <img width="1900" height="1080" alt="scrnshot 3" src="https://github.com/user-attachments/assets/7155a1dc-fa0d-404f-8085-71e5198f3629" />
+If the duck is still not fed, The duck reaches it's primal avatar and starts asking you why you didn't feed him. Now he starts laying eggs more aggressively.
 <img width="1900" height="1080" alt="scrnshot 4" src="https://github.com/user-attachments/assets/dddeb986-1532-4e61-8b5e-4e8179538365" />
+Now unless requested politely to leave , the duck keeps laying eggs, slowly covering up the whole screen with it's holy golden eggs.
+
 
 
 

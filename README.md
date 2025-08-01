@@ -1,26 +1,29 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Project Name] 🎯
+# Quackocalypse 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: F7
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Krishnanunni H Pillai - Adi Shankara Institute of Engineering and Technology
+- Member 2: Akshat Sasi Menon - Adi Shankara Institute of Engineering and Technology
+
 
 ### Project Description
-[2-3 lines about what your project does]
+Quackocalypse is a delightfully useless desktop app where a cute animated duck slowly descends into madness unless it’s fed every 10 seconds.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+
+Because productivity is overrated, and sometimes…
+you just need a DUCK that lays eggs in protest.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+
+Because your desktop was far too calm… until the DUCK arrived!!!
 
 ## Technical Details
 ### Technologies/Components Used

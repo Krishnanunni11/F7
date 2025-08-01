@@ -28,26 +28,23 @@ Because your desktop was far too calm… until the DUCK arrived!!!
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Python
+- tkinter, Pillow (PIL), pygame,
+- VS Code, Chatgpt
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- nil
 
 ### Implementation
 For Software:
 # Installation
-[commands]
+VSCode ,Python 3.13.5
 
 # Run
-[commands]
+python app.py
 
 ### Project Documentation
-For Software:
+For Software: ni
 
 # Screenshots (Add at least 3)
 ![Screenshot1](Add screenshot 1 here with proper name)
@@ -60,27 +57,71 @@ For Software:
 *Add caption explaining what this shows*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+Workflow Breakdown
+ 1. Application Launch
+Tkinter creates a borderless, full-screen transparent window
 
-For Hardware:
+Loads and displays duck GIF (animated) and health bar
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+ 2. Idle Loop & Animation
+Runs loops for:
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+Duck animation every 100ms
 
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
+Hunger check every 300ms
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+Health bar update every 100ms
 
-![Final](Add photo of final product here)
-*Explain the final build*
+Quack sound check every 800ms
+
+ 3. Hunger Monitoring
+If no feeding for 5 seconds:
+
+Enters hungry mode:
+
+Duck starts growing
+
+Moves randomly
+
+Lays eggs on screen
+
+ 4. Chaos Mode
+If duck reaches maximum size:
+
+Enters chaos mode:
+
+Movement accelerates
+
+Egg drop rate increases exponentially
+
+A prompt window appears
+
+5. Prompt Behavior
+Custom prompt asks: "So you won't feed me?"
+
+Users can type a message:
+
+“please” / “pls” → app exits politely
+
+Other phrases → gets funny replies in bold
+
+Close button is disabled (using overrideredirect)
+
+Responses can be extended to include Malayalam phrases too
+
+ 6. Feeding the Duck
+Clicking FEED ME button:
+
+Resets duck size and position
+
+Resets health bar
+
+Removes all eggs
+
+Exits hungry and chaos modes
+
+Hides the prompt (if active)
+
 
 ### Project Demo
 # Video

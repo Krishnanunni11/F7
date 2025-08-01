@@ -80,7 +80,7 @@ class DuckApp:
 
     def monitor_hunger(self):
         elapsed = time.time() - self.last_fed
-        if elapsed > 10:
+        if elapsed > 5:
             self.hungry_mode = True
             if not self.feed_button.winfo_ismapped():
                 self.feed_button.place(x=self.screen_width//2 - 100, y=self.screen_height//2 - 25, width=200, height=50)
@@ -121,7 +121,7 @@ class DuckApp:
                 self.start_chaos_mode()
 
     def grow_duck(self):
-        growth_step = max(1, (self.max_size - self.size) // 10)
+        growth_step = max(20, (self.max_size - self.size) // 4)
         self.size += growth_step
         if self.size > self.max_size:
             self.size = self.max_size
@@ -166,20 +166,25 @@ class DuckApp:
         self.root.after(400, self.toggle_button_color)
 
     def prompt_exit(self):
-        prompt = tk.Toplevel(self.root)
-        prompt.title("So you won't feed me?")
-        prompt.geometry("400x150+500+300")
-        prompt.attributes("-topmost", True)
-        
-        tk.Label(prompt, text="So you won't feed me?").pack(pady=(10, 2))
-        
-        entry = tk.Entry(prompt, font=("Arial", 12), width=40)
-        entry.pack(pady=2)
-        
-        output_label = tk.Label(prompt, text="", fg="blue", font=("Arial", 10))
-        output_label.pack(pady=5)
+            prompt = tk.Toplevel(self.root)
+            prompt.overrideredirect(True)
+            prompt.title("So you won't feed me!?!?")
+            prompt.geometry("400x150+500+300")
+            prompt.attributes("-topmost", True)
 
-        responses = {
+    
+            prompt.protocol("WM_DELETE_WINDOW", lambda: None)
+
+            tk.Label(prompt, text="So you won't feed me!?!?", font=("Arial", 14, "bold")).pack(pady=(10, 2))
+
+
+            entry = tk.Entry(prompt, font=("Arial", 12), width=40)
+            entry.pack(pady=2)
+
+            output_label = tk.Label(prompt, text="", fg="blue", font=("Arial", 10,"bold","italic"))
+            output_label.pack(pady=5)
+
+            responses = {
             "please": "Fine, I’ll leave... but next time, don’t make me ask!",
             "pls": "Spell it out next time, maybe? I’ll let this slide.",
             "shut up": "Excuse me? I'm laying eggs here.",
@@ -199,24 +204,32 @@ class DuckApp:
             "lol": "This isn’t funny. I’m starving.",
             "haha": "Laugh while you can. Chaos is coming.",
             "duck": "That’s me. Say my name with respect.",
-            "hungry": "Wow, really? You think *you're* hungry?"
+            "hungry": "Wow, really? You think *you're* hungry?",
+            "poy tharamo": "Evide pokan? Enthina njn poyit?",
+            "po": "Tharavu evidem pokula ingne paranjal..",
+            "poda": "Aa parnjath nee kayyil vecho! Kurach okke maryada venam Mr.",
+            "onnum illa": "Onnum ille? Ente kayyilum sadhanam illa.",
+            "venda": "Ninakk vende? Ennal Enikkum venda!",
+            "da": "Da? nee enne pole vere oru duck ine kandittundo?",
+            "entha": "Enthano? ayinu nee etha!!!"
+            
         }
 
+            def check_input():
+                user_input = entry.get().lower()
+                for keyword, reply in responses.items():
+                    if keyword in user_input:
+                        if "please" in keyword or "pls" in keyword:
+                            output_label.config(text=reply)
+                            self.root.after(2000, self.root.destroy) 
+                            return
+                        else:
+                            output_label.config(text=reply)
+                            return
+                output_label.config(text="Try being nice, maybe?")
 
-        def check_input():
-            user_input = entry.get().lower()
-            for keyword, reply in responses.items():
-                if keyword in user_input:
-                    if "please" in keyword or "pls" in keyword:
-                        output_label.config(text=reply)
-                        self.root.after(2000, self.root.destroy) 
-                        return
-                    else:
-                        output_label.config(text=reply)
-                        return
-            output_label.config(text="Try being nice, maybe?")
+            tk.Button(prompt, text="Submit", command=check_input).pack(pady=(2, 5))
 
-        tk.Button(prompt, text="Submit", command=check_input).pack(pady=(2, 5))
 
 
 

@@ -47,6 +47,8 @@ python app.py
 For Software: ni
 
 # Screenshots (Add at least 3)
+<img width="1920" height="1080" alt="scrnshot 1" src="https://github.com/user-attachments/assets/4cbf6cf6-a513-458c-8b2c-2215733735b8" />
+
 ![Screenshot1](Add screenshot 1 here with proper name)
 *Add caption explaining what this shows*
 

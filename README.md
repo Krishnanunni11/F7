@@ -48,17 +48,12 @@ For Software: ni
 
 # Screenshots (Add at least 3)
 <img width="1920" height="1080" alt="scrnshot 1" src="https://github.com/user-attachments/assets/4cbf6cf6-a513-458c-8b2c-2215733735b8" />
+<img width="1899" height="1080" alt="scrshnot 2" src="https://github.com/user-attachments/assets/69daf96e-7b21-4828-83ee-cb6489fb9466" />
+<img width="1900" height="1080" alt="scrnshot 3" src="https://github.com/user-attachments/assets/7155a1dc-fa0d-404f-8085-71e5198f3629" />
+<img width="1900" height="1080" alt="scrnshot 4" src="https://github.com/user-attachments/assets/dddeb986-1532-4e61-8b5e-4e8179538365" />
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
 Workflow Breakdown
  1. Application Launch
 Tkinter creates a borderless, full-screen transparent window
@@ -127,16 +122,16 @@ Hides the prompt (if active)
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
+https://github.com/user-attachments/assets/b3f6b4d0-d462-4f8a-b935-0577ef61f184
 
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+  It is an interactive and entertaining desktop application, which is developed on Python platform, with an animated duck that is mischievous in nature. Once the app is opened, the duck is displayed at the bottom of your screen without creating any noise, and a health indicator is visible to tell you that the duck is fed well. When the duck is allowed to go unsatisfied by just a few seconds, the animal will become hungry, the health meter will be decreased, the duck will quack louder, and a blinking Wait some more and the duck blows up, begins to move around your screen and starts to lay eggs everywhere, bringing total disarray.
+   
+   After a while, it presents a prompt which questions you to be polite. You cannot even close it without typing anything polite, such as please, otherwise, beunky duck will write back with an ignorant or smug text. After feeding, the duck quiets down, resumes normal size, and eggs are gone too, and things are peaceful again. This is an app made using Python and based on the Tkinter API for graphics, Pillow library to implement animations and Pygame to give sound to your digital duck. So, the next time you get reminded about feeding your duck or get lost by forgetting your duck ; this app might just push you to feed and nurture your digital pet ROFL!
+
+
+
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 

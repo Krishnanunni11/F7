@@ -19,7 +19,6 @@ class DuckApp:
         self.root.geometry(f"{self.screen_width}x{self.screen_height}+0+0")
         self.root.config(bg="white")
 
-        
         self.size = 100
         self.max_size = int(self.screen_width * 0.35)
         self.current_frame = 0
@@ -27,17 +26,14 @@ class DuckApp:
         self.duck_label = tk.Label(root, image=self.duck_frames[0], bg="white")
         self.duck_label.place(x=150, y=150)
 
-        
         self.health_canvas = tk.Canvas(root, width=100, height=10, bg="white", highlightthickness=0)
         self.health_bar = self.health_canvas.create_rectangle(0, 0, 100, 10, fill="green")
         self.health_canvas.place(x=150, y=150 + self.size + 5)
 
-        
         self.feed_button = tk.Button(root, text="FEED ME", font=("Arial", 18), command=self.feed_duck)
         self.feed_button_visible = False
         self.toggle_button_color()
 
-        
         self.last_fed = time.time()
         self.eggs = []
         self.prompt_shown = False
@@ -46,7 +42,7 @@ class DuckApp:
         self.egg_drop_rate = 1000
         self.egg_loop_running = False
 
-        self.egg_image = ImageTk.PhotoImage(Image.open("egg.png").resize((32, 32)))
+        self.egg_image = ImageTk.PhotoImage(Image.open("egg2.png").resize((32, 32)))
 
         self.animate_duck()
         self.monitor_hunger()
@@ -164,28 +160,64 @@ class DuckApp:
     def toggle_button_color(self):
         if self.feed_button.winfo_ismapped():
             current = self.feed_button.cget("bg")
-            new_color = "red" if current == "white" else "white"
-            fg_color = "white" if new_color == "red" else "red"
+            new_color = "red" if current == "white" else "yellow"
+            fg_color = "white" if new_color == "red" else "black"
             self.feed_button.config(bg=new_color, fg=fg_color, activebackground=new_color, activeforeground=fg_color)
         self.root.after(400, self.toggle_button_color)
 
     def prompt_exit(self):
         prompt = tk.Toplevel(self.root)
         prompt.title("So you won't feed me?")
-        prompt.geometry("300x100+500+300")
+        prompt.geometry("400x150+500+300")
         prompt.attributes("-topmost", True)
-        tk.Label(prompt, text="So you won't feed me?").pack()
-        entry = tk.Entry(prompt)
-        entry.pack()
+        
+        tk.Label(prompt, text="So you won't feed me?").pack(pady=(10, 2))
+        
+        entry = tk.Entry(prompt, font=("Arial", 12), width=40)
+        entry.pack(pady=2)
+        
+        output_label = tk.Label(prompt, text="", fg="blue", font=("Arial", 10))
+        output_label.pack(pady=5)
+
+        responses = {
+            "please": "Fine, I’ll leave... but next time, don’t make me ask!",
+            "pls": "Spell it out next time, maybe? I’ll let this slide.",
+            "shut up": "Excuse me? I'm laying eggs here.",
+            "no": "No? NO?? I’m the one who says no.",
+            "idk": "Well figure it out, human.",
+            "help": "I'm the one who needs help. Have you seen the mess here?",
+            "sorry": "Apology accepted... for now.",
+            "feed": "Oh now you want to feed me? Bit late for that, don't you think?",
+            "die": "Wow. You want the duck to die? You monster.",
+            "leave": "I’ll leave when I’m good and ready. Or when you beg.",
+            "why": "Why not?",
+            "go away": "Go away? This is MY screen now.",
+            "what": "What indeed.",
+            "ok": "Okay? OKAY?? Feed me then!",
+            "fine": "Fine? Then feed me and we’re good.",
+            "bruh": "Bruh yourself.",
+            "lol": "This isn’t funny. I’m starving.",
+            "haha": "Laugh while you can. Chaos is coming.",
+            "duck": "That’s me. Say my name with respect.",
+            "hungry": "Wow, really? You think *you're* hungry?"
+        }
+
 
         def check_input():
-            if "please" in entry.get().lower():
-                self.root.destroy()
-            else:
-                entry.delete(0, tk.END)
-                entry.insert(0, "Be more polite!")
+            user_input = entry.get().lower()
+            for keyword, reply in responses.items():
+                if keyword in user_input:
+                    if "please" in keyword or "pls" in keyword:
+                        output_label.config(text=reply)
+                        self.root.after(2000, self.root.destroy) 
+                        return
+                    else:
+                        output_label.config(text=reply)
+                        return
+            output_label.config(text="Try being nice, maybe?")
 
-        tk.Button(prompt, text="Submit", command=check_input).pack()
+        tk.Button(prompt, text="Submit", command=check_input).pack(pady=(2, 5))
+
 
 
 root = tk.Tk()
